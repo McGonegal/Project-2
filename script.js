@@ -25,10 +25,23 @@ const dbRef = ref(database);
 	//store username as a variable ***For Thur
 // ***Stretch Goal***
 
+// ************* Questions for Seth-
+        // should we but making more branches or is it okay to work on Develeopment?
+
 
 //Create a button in the main .html page that displays on the homepage that will begin the trivia game
 	//create an eventlistener to listen for the click of the button
 
+const startButton = document.getElementById('startBtn')
+const questionContainerElement = document.getElementById('questionContainer')
+
+startButton.addEventListener('click', startGame)
+
+function startGame() {
+    console.log('started');
+    startButton.classList.add('hide');
+    questionContainerElement.classList.remove('hide');
+}
 
 // ***in progress, for tonight or friday***
 
@@ -42,3 +55,6 @@ const dbRef = ref(database);
 	//Loop through the function that we used to start the trivia for a total questions.
 
     // ***in progress, for friday***
+
+
+    // DEPLOY TO NETLIFY
