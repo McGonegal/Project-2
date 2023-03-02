@@ -28,6 +28,8 @@ const dbRef = ref(database);
 
 //Create a button in the main .html page that displays on the homepage that will begin the trivia game
 	//create an eventlistener to listen for the click of the button
+
+
 // ***in progress, for tonight or friday***
 
 
