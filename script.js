@@ -9,7 +9,3 @@ const database = getDatabase(firebaseInfo);
 const dbRef = ref(database);
 
 // this will look like gibberish!
-console.log(dbRef);
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
