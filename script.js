@@ -7,5 +7,3 @@ const database = getDatabase(firebaseInfo);
 // create a specific reference to the root of my db
     // this is the representation of our db (this is how we hook into our db and subsequently update and interact with it)
 const dbRef = ref(database);
-
-// this will look like gibberish!
