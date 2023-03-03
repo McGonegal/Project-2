@@ -1,6 +1,7 @@
 import firebaseInfo from "./firebase.js";
 import { get, getDatabase, ref, onValue, push, update, set, remove } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
-
+import { triviaQuestions } from "./project-2-data.js";
+console.log(triviaQuestions)
 // THESE STEPS + THE ONES IN FIREBASE.JS WILL BE YOUR RTD SETUP UP EVERY SINGLE TIME
 // initialize our specific db using the configured app
 const database = getDatabase(firebaseInfo);
@@ -38,11 +39,45 @@ const questionContainerElement = document.getElementById('questionContainer')
 startButton.addEventListener('click', startGame)
 
 function startGame() {
-    console.log('started');
-    startButton.classList.add('hide');
-    questionContainerElement.classList.remove('hide');
+    console.log('started')
+    startButton.classList.add('hide')
+    questionContainerElement.classList.remove('hide')
 }
 
+
+
+
+const question = document.getElementById('question')
+question.innerHTML = triviaQuestions[0].question
+
+function fillQuestions(triviaQuestionObject){
+    const questionHTML = document.getElementById('question')
+    questionHTML.innerHTML = triviaQuestionObject.question
+}
+
+// fillQuestions(triviaQuestions[0])
+
+const trivaAnswersArray = triviaQuestions[0].answers
+
+function fillAnswers(triviaQuestion){
+    triviaQuestion.answers.forEach(function (answer, index){
+    const btn = document.getElementById(`btn${index}`)
+    btn.innerHTML = triviaQuestion.answers[index]
+});
+}
+
+// fillAnswers(triviaQuestions[0])
+
+function fillQuestionsAndAnswers(number){
+    fillAnswers(triviaQuestions[number])
+    fillQuestions(triviaQuestions[number])
+}
+
+fillQuestionsAndAnswers(5)
+
+// ***************NEXT STEPS - call both functions with trivia questions at an index, and plug that index number into both fillQuestions and fillAnswers
+// go through another object in our triviaQuestions array when the next button is pressed.
+// pick a # and call fillQuestionsAndAnswers with that #
 // ***in progress, for tonight or friday***
 
 

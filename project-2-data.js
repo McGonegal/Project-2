@@ -16,12 +16,12 @@ function addToDataBase(key, value){
 const triviaQuestions = [
 		 {
 			"question": "During the American Prohibition, what name was given to the illegal taverns?",
-			"correctAnswer": "Speakeasies",
+			"correctAnswer": 1,
 			"answers": ['Prohibition Pubs', 'Speakeasies', 'Moonshines', 'Moonlighters']
 		},
 		{
 			"question": "What is the longest River in Ireland?",
-			"correctAnswer": "River Shannon",
+			"correctAnswer": 3,
 			"answers": ['River Liffey', 'River Barrow', 'River Nore', 'River Shannon']
 		},
 		{
@@ -132,3 +132,5 @@ const triviaQuestions = [
 ]
 
 	addToDataBase('triviaArray', triviaQuestions)
+
+export {triviaQuestions}
