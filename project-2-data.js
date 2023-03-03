@@ -1,12 +1,27 @@
-"triva" [
+import firebaseInfo from "./firebase.js";
+import {getDatabase, ref, set, push} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+
+// THESE STEPS + THE ONES IN FIREBASE.JS WILL BE YOUR RTD SETUP UP EVERY SINGLE TIME
+// initialize our specific db using the configured app
+const database = getDatabase(firebaseInfo);
+// create a specific reference to the root of my db
+    // this is the representation of our db (this is how we hook into our db and subsequently update and interact with it)
+const dbRef = ref(database);
+
+function addToDataBase(key, value){
+	const custom = ref(database, key);
+	return set(custom, value)
+}
+
+const triviaQuestions = [
 		 {
 			"question": "During the American Prohibition, what name was given to the illegal taverns?",
-			"correctAnswer": "Speakeasies",
+			"correctAnswer": 1,
 			"answers": ['Prohibition Pubs', 'Speakeasies', 'Moonshines', 'Moonlighters']
 		},
 		{
 			"question": "What is the longest River in Ireland?",
-			"correctAnswer": "River Shannon",
+			"correctAnswer": 3,
 			"answers": ['River Liffey', 'River Barrow', 'River Nore', 'River Shannon']
 		},
 		{
@@ -116,4 +131,6 @@
 		}
 ]
 
-	
+	addToDataBase('triviaArray', triviaQuestions)
+
+export {triviaQuestions}
