@@ -2,62 +2,92 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 html { box-sizing: border-box;}
 
-*, *:before, *:after {box-sizing: inherit}
+/* Pick a google font */
 
-.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+html {
+    font-size: 125%;
+    background-color: blue;
+}
 
-*, *::before, *::after {
+* {
     box-sizing: border-box;
-    font-family: 'Lora', serif;
-}
-
-:root {
-
-}
-body {
-    padding: 0;
     margin: 0;
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(42, 103, 216);
+    padding: 0;
 }
 
-body.correct {
-    background-color: green;
-}
-
-body.wrong {
-    background-color: red;
+h1 {
+    font-size: 5rem;
+    margin-bottom: 100px;
+    color: white;
 }
 
 .container {
-    width: 800px;
-    max-width: 80%;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 0 10px 2px;
-
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.btnGrid {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.justifyContent {
+    justify-content: center;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
 }
 
 .btn {
-    color:  white;
-    border: 1px solid  white;
-    background-color:  rgb(36, 90, 190);
-    border-radius: 5px;
-    padding: 5px 10px;
-    outline: none;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
 }
-.btn:hover {
-    border-color: black;
+
+.btn:hover{
+    cursor: pointer;
+    color: black;
+}
+
+/* Game Styling */
+
+.gameBody {
+    color: white;
+}
+
+.choiceContainer {
+    display:flex;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    color: black;
+
+}
+
+.choiceContainer:hover {
+    cursor: pointer;
+    color: blue;
+}
+
+.correct {
+    background-color: green;
+}
+
+.incorrect {
+    background-color: red;
 }
