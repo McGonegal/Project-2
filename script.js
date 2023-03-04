@@ -14,10 +14,7 @@ const question = document.querySelector('#question');
 
 const choices = Array.from(document.querySelectorAll('.choiceText'))
 
-let currentQuestion = {
-
-
-}
+let currentQuestion = {};
 
 let acceptingAnswer = true;
 
@@ -29,4 +26,49 @@ let availableQuestions = []
 
 let questionsArray = triviaQuestions;
 
-console.log(questionsArray);
+// console.log(questionsArray);
+
+
+const maxQuestions = 10;
+
+function startGame(){
+	questionCounter= 0;
+	// we are using the spread function below to put all available questions into variable
+	availableQuestions = {...questions};
+	getNewQuestion()
+}
+
+function getNewQuestion(){
+	const questionIndex = Math.floor(Math.random() * availableQuestions.length)
+	currentQuestion =  availableQuestions[questionIndex];
+	question.innerHTML = currentQuestion.question;
+	choices.forEach(function choice(){
+		const number = choice.dataset['number']
+		choice.innerHTML = currentQuestion['choice' + number]
+	})
+
+	availableQuestions.splice(questionsIndex, 1);
+
+	acceptingAnswer = true;
+
+	
+}
+
+choices.forEach(choice => {
+	choice.addEventListener('click', e =>{
+		if(!acceptingAnswer) return
+
+		acceptingAnswer = false;
+		const selectedChoice = e.target
+		const selectedAnswer = selectedChoice.dataset['number']
+
+		let classToApply = selectedAnswer === currentQuestion.answer ? 'correct' : 'incorrect' 
+
+		setTimeout(() => {
+			selectedChoice.parentElement.classList.remove(classToApply)
+			getNewQuestion()
+		}, 1000)
+	})
+})
+
+startGame ();
