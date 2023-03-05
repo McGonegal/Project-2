@@ -18,10 +18,6 @@ const dbRef = ref(database);
 
 	// console.log(randomNumber())
 
-	
-	
-	
-	
 	const question = document.getElementById('question')
 	
 	question.innerHTML = triviaQuestions[0].question
@@ -33,7 +29,7 @@ const dbRef = ref(database);
 	
 	// fillQuestions(triviaQuestions[2])
 	
-	const trivaAnswersArray = triviaQuestions[0].answers
+	// const trivaAnswersArray = triviaQuestions[0].answers
 	
 	function fillAnswers(fillGrid){
 		const answerBtns = document.querySelectorAll('.answerBtn');
@@ -87,7 +83,18 @@ const dbRef = ref(database);
 			alert("Game over!")
 		}
 	})
-	
+
+	const userAnswerSelection = document.querySelectorAll('.answerBtn');
+
+	userAnswerSelection.forEach((button) => {
+		button.addEventListener('click', function (event){
+			const clickId = event.target.id;
+			const correctId = triviaQuestions
+
+			
+		})
+	})
+
 	
 
 	
