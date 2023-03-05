@@ -16,7 +16,13 @@ const dbRef = ref(database);
 		return randomNum;
 	}
 
-	// console.log(randomNumber())
+	
+	let currentIndex = randomNumber();
+
+	const currentQuestion = triviaQuestions[currentIndex];
+
+
+	console.log(currentQuestion);
 
 	const question = document.getElementById('question')
 	
@@ -62,7 +68,7 @@ const dbRef = ref(database);
 	
 	// fillQuestionsAndAnswers(5);
 
-	fillQuestionsAndAnswers(randomNumber())
+	fillQuestionsAndAnswers(currentIndex)
 
 	const nextButton = document.getElementById('nextBtn');
 
@@ -77,21 +83,30 @@ const dbRef = ref(database);
 
 
 	nextButton.addEventListener ('click', function(){
+		console.log("nextButton")
 		if (count <= 10) {
-			fillQuestionsAndAnswers(randomNumber());
+			currentIndex = randomNumber();
+			fillQuestionsAndAnswers(currentIndex);
 		} else {
 			alert("Game over!")
 		}
 	})
+
+	const body = document.querySelector("body")
+	console.log(body)
 
 	const userAnswerSelection = document.querySelectorAll('.answerBtn');
 
 	userAnswerSelection.forEach((button) => {
 		button.addEventListener('click', function (event){
 			const clickId = event.target.id;
-			const correctId = triviaQuestions
-
-			
+			const correctId = currentQuestion.correctAnswer
+			console.log(clickId, correctId)
+			if (clickId == correctId){
+				body.classList.add("correct")
+			} else {
+				body.classList.add("wrong")
+			}
 		})
 	})
 
