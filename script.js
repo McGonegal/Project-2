@@ -73,9 +73,22 @@ const dbRef = ref(database);
 	// console.log(nextButton)
 
 
+	let count = 0;
+
+	nextButton.onclick = function(){
+		count ++
+	}
+
+
 	nextButton.addEventListener ('click', function(){
-		fillQuestionsAndAnswers(randomNumber());
+		if (count <= 10) {
+			fillQuestionsAndAnswers(randomNumber());
+		} else {
+			alert("Game over!")
+		}
 	})
+	
+	
 
 	
 	// ***************NEXT STEPS - call both functions with trivia questions at an index, and plug that index number into both fillQuestions and fillAnswers
