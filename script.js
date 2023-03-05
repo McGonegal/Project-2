@@ -11,6 +11,15 @@ const dbRef = ref(database);
 
 	const questionContainerElement = document.getElementById('questionContainer')
 	
+	function randomNumber(){
+		const randomNum = Math.floor(Math.random() * triviaQuestions.length)
+		return randomNum;
+	}
+
+	// console.log(randomNumber())
+
+	
+	
 	
 	
 	const question = document.getElementById('question')
@@ -29,7 +38,7 @@ const dbRef = ref(database);
 	function fillAnswers(fillGrid){
 		const answerBtns = document.querySelectorAll('.answerBtn');
 		const answers = fillGrid.answers;
-		// console.log(answerBtns)
+		
 	    answerBtns.forEach(function (answerBtn, index){
 	    answerBtn.innerHTML = answers[index]
 	});
@@ -38,9 +47,7 @@ const dbRef = ref(database);
 	// fillAnswers(triviaQuestions[0])
 	
 	function fillQuestionsAndAnswers(number){
-		
 		fillAnswers(triviaQuestions[number])
-	
 		fillQuestions(triviaQuestions[number])
 	}
 	
@@ -57,7 +64,19 @@ const dbRef = ref(database);
 	
 	
 	
-	fillQuestionsAndAnswers()
+	// fillQuestionsAndAnswers(5);
+
+	fillQuestionsAndAnswers(randomNumber())
+
+	const nextButton = document.getElementById('nextBtn');
+
+	// console.log(nextButton)
+
+
+	nextButton.addEventListener ('click', function(){
+		fillQuestionsAndAnswers(randomNumber());
+	})
+
 	
 	// ***************NEXT STEPS - call both functions with trivia questions at an index, and plug that index number into both fillQuestions and fillAnswers
 	// go through another object in our triviaQuestions array when the next button is pressed.
