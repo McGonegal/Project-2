@@ -1,0 +1,22 @@
+//Create a firebase.js module ****DONE****
+	//Configure and export the firebase object ****DONE****
+//Create a module for trivia questions and answers****DONE****
+	//import any required firebase modules
+	//Create one or two arrays:
+	//one array to hold the trivia questions and answers ****DONE****
+	//triva answers: each question has an array of all the questions, and one object that holds the true answer ****DONE****
+	//Set() the trivia answer and questions array(s) into our real time database. ****DONE****
+//Create script.js module
+	//import the database object and any required firebase modules ****DONE****
+
+// ***Stretch Goal***
+//Create a form in the main .html page that will display on the homepage that accepts the user's name
+	//create an eventlistener to listen for the form submit
+	//store username as a variable ***For Thur
+// ***Stretch Goal***
+
+// ************* Questions for Seth-
+        // should we but making more branches or is it okay to work on Develeopment?
+
+//Create a button in the main .html page that displays on the homepage that will begin the trivia game
+	//create an eventlistener to listen for the click of the button
