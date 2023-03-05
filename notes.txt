@@ -18,7 +18,7 @@
 // ************* Questions for Seth-
         // should we but making more branches or is it okay to work on Develeopment?
 
+
 //Create a button in the main .html page that displays on the homepage that will begin the trivia game
 	//create an eventlistener to listen for the click of the button
 
-	// on page load, with that random number we have for fillQuestionsAndAnswers, get a variable for correct number we need from the object we are in
