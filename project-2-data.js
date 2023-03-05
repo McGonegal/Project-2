@@ -134,3 +134,4 @@ const triviaQuestions = [
 	export {triviaQuestions}
 
 	addToDataBase('triviaArray', triviaQuestions)
+
