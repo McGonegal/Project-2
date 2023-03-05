@@ -22,6 +22,8 @@ let questionCounter = 0;
 
 let availableQuestions = []
 
+const questions =  triviaQuestions.questions;
+
 // added our array to the the variable questionsArray
 
 let questionsArray = triviaQuestions;
