@@ -20,7 +20,7 @@ body {
     margin: 0;
     display: flex;
     width: 100vw;
-    height: 100vh;
+    height: 95vh;
     align-items: center;
     justify-content: center;
     background-color: rgb(42, 103, 216);
@@ -69,6 +69,40 @@ body.wrong {
     color: white;
 }
 
-@media (max-width: 400px){
-
+p {
+    margin: 0;
+    padding: 0;
+    color: white;
 }
+
+ 
+p {
+    font-size: 1.5rem;
+    margin: 20px;
+}
+
+.greenSpan {
+    color: green;
+}
+
+.redSpan {
+    color: red;
+}
+
+.flexContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projectFooter {
+    margin-top: 100px;
+}
+
+@media (max-width: 500px){
+    .btnGrid {
+    display: flex;
+    flex-direction: column;
+    }
+}
+

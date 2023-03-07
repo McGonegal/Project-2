@@ -17,6 +17,7 @@ onValue(dbRef, function (data) {
 	const nextButton = document.getElementById('nextBtn');
 	const ourData = data.val();
 	const triviaQuestions = ourData.triviaArray;
+	let count = 0;
 
 	let currentQuestion = null;
 	function loadQuestion() {
@@ -28,7 +29,6 @@ onValue(dbRef, function (data) {
 		let currentIndex = randomNumber();
 
 		currentQuestion = triviaQuestions[currentIndex];
-		// console.log("This is the current question on the page", currentQuestion);
 
 		questionHTML.innerHTML = currentQuestion.question;
 		
@@ -40,9 +40,14 @@ onValue(dbRef, function (data) {
 	loadQuestion();
 
 	nextButton.addEventListener('click', function () {
+		count += 1;
 		body.classList.remove("correct");
 		body.classList.remove("wrong");
-		loadQuestion();
+		if (count <= 10) {loadQuestion();
+		} else {
+			alert("Game over!")
+		}
+		
 	});
 
 	document.querySelectorAll('.answerBtn').forEach((button) => {
