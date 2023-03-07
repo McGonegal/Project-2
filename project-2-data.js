@@ -13,6 +13,8 @@ function addToDataBase(key, value){
 	return set(custom, value)
 }
 
+
+
 const triviaQuestions = [
 		 {
 			"question": "During the American Prohibition, what name was given to the illegal taverns?",
@@ -30,7 +32,7 @@ const triviaQuestions = [
 			"answers": ['People\'s car', 'Family car', 'Powerful Car', 'Reliable Car']
 		},
 		{
-			"question": "Who was the first gymnast to be awarded a 10.0 in the Olympic gammes?",
+			"question": "Who was the first gymnast to be awarded a 10.0 in the Olympic games?",
 			"correctAnswer": 1,
 			"answers": ['Beth Tweddle', 'Nadia Comaneci', 'Simone Biles', 'Larisa Latynina']
 		},
@@ -116,7 +118,7 @@ const triviaQuestions = [
 		},
 		{
 			"question": "Who painted the Girl with the Pearl Earring?",
-			"correctAnswer": 1,
+			"correctAnswer": 2,
 			"answers": ['Vincent Van Gogh', 'Leonardo da Vinci', 'Johannes Vermeer', 'Sandro Boticelli']
 		},
 		{
@@ -131,7 +133,9 @@ const triviaQuestions = [
 		}
 ]
 
-	export {triviaQuestions}
+	// export {triviaQuestions}
 
-	addToDataBase('triviaArray', triviaQuestions)
+	// addToDataBase('triviaArray', triviaQuestions)
+
+
 

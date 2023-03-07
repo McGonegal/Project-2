@@ -69,3 +69,6 @@ body.wrong {
     color: white;
 }
 
+@media (max-width: 400px){
+
+}
