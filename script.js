@@ -11,8 +11,8 @@ const dbRef = ref(database);
 
 
 onValue(dbRef, function (data) {
-	const body = document.querySelector("body")
-	const questionHTML = document.getElementById('question')
+	const body = document.querySelector("body");
+	const questionHTML = document.getElementById('question');
 	const answerBtns = document.querySelectorAll('.answerBtn');
 	const nextButton = document.getElementById('nextBtn');
 	const ourData = data.val();
@@ -21,42 +21,41 @@ onValue(dbRef, function (data) {
 	let currentQuestion = null;
 	function loadQuestion() {
 		function randomNumber() {
-			const randomNum = Math.floor(Math.random() * triviaQuestions.length)
+			const randomNum = Math.floor(Math.random() * triviaQuestions.length);
 			return randomNum;
 		}
 
 		let currentIndex = randomNumber();
 
 		currentQuestion = triviaQuestions[currentIndex];
-		console.log("This is the current question on the page", currentQuestion);
+		// console.log("This is the current question on the page", currentQuestion);
 
-		questionHTML.innerHTML = currentQuestion.question
+		questionHTML.innerHTML = currentQuestion.question;
 		
 		const answers = currentQuestion.answers;
 		answerBtns.forEach(function (answerBtn, index) {
-			answerBtn.innerHTML = answers[index]
-			answerBtn.dataset.answerIndex = index
+			answerBtn.innerHTML = answers[index];
 		});
 	}
 	loadQuestion();
 
 	nextButton.addEventListener('click', function () {
-		body.classList.remove("correct")
-		body.classList.remove("wrong")
-		loadQuestion()
-	})
+		body.classList.remove("correct");
+		body.classList.remove("wrong");
+		loadQuestion();
+	});
 
 	document.querySelectorAll('.answerBtn').forEach((button) => {
 		button.addEventListener('click', function (event) {
 			const clickId = event.target.dataset.answerIndex;
 			if (clickId == currentQuestion.correctAnswer) {
-				body.classList.add("correct")
+				body.classList.add("correct");
 			} else {
-				body.classList.add("wrong")
+				body.classList.add("wrong");
 			}
-		})
-	})
-})
+		});
+	});
+});
 
 
 
